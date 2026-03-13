@@ -147,6 +147,71 @@ KudoHaruka」並非聲優本人）。
     <td align="center"><font size="5" face="Noto Serif TC" color="#000000">花本育（蜂蜜幸運草）</font></td>
   </tr>
 
+  <br>
+<p align="center">
+<font size="6" face="Noto Serif TC" color="#AE0000">
+KDHR粉絲應援區
+</font>
+</p>
+
+<!-- 愛心按讚 -->
+<p align="center">
+<button onclick="likeKDHR()" style="font-size:20px">❤️ 喜歡KDHR</button>
+<p id="likecount" align="center"><font size="5">0</font></p>
+</p>
+
+<script>
+let count = 0;
+function likeKDHR(){
+count++;
+document.getElementById("likecount").innerText = count;
+}
+</script>
+
+<br>
+
+<!-- 留言板 -->
+<p align="center">
+<font size="6" face="Noto Serif TC" color="#003E3E">
+訪客留言
+</font>
+</p>
+
+<p align="center">
+<input id="name" placeholder="你的名字">
+</p>
+
+<p align="center">
+<textarea id="message" rows="4" cols="40" placeholder="留言內容"></textarea>
+</p>
+
+<p align="center">
+<button onclick="addComment()">送出留言</button>
+</p>
+
+<div id="comments" align="center"></div>
+
+<script>
+function addComment(){
+
+let name=document.getElementById("name").value
+let message=document.getElementById("message").value
+
+if(name==""||message==""){
+alert("請輸入名字和留言")
+return
+}
+
+let comment=document.createElement("p")
+
+comment.innerHTML="<font size='5'><b>"+name+"</b>："+message+"</font>"
+
+document.getElementById("comments").appendChild(comment)
+
+document.getElementById("name").value=""
+document.getElementById("message").value=""
+}
+</script>
 
 
 <audio controls>
@@ -154,4 +219,5 @@ KudoHaruka」並非聲優本人）。
 </audio>
 
 </body>
+
 </html>
